@@ -1,0 +1,27 @@
+ <form class="form-inline">
+  <div class="form-group">
+    <label for="name">Name :</label>
+    <input type="text" class="form-control" placeholder="Enter the student name" name="name" [(ngModel)]="name">
+  </div>
+  <div class="form-group">
+    <label for="numfriends">Number of Friends:</label>
+    <input type="number" class="form-control"  placeholder="Enter the no of friends" name="numfriends" [(ngModel)]="numFriends">
+  </div>
+ 
+  <button type="button" class="btn btn-default" (click)="onClickAdd()">Add</button>
+</form> 
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Number of Friends</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students"> 
+        <td>{{student.name}}</td>
+        <td>{{student.numFriends}}</td>
+      </tr>
+    </tbody>
+  </table>
